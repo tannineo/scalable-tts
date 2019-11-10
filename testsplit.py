@@ -15,9 +15,9 @@ def grandom():
     while left > 0:
         left -= 1
         if res == None:
-            res = AudioSegment.from_mp3(mp3list[random.randint(0,len(mp3list))])
+            res = AudioSegment.from_mp3(mp3list[random.randint(0,len(mp3list)-1 )])
         else:
-            res += AudioSegment.from_mp3(mp3list[random.randint(0,len(mp3list))])
+            res += AudioSegment.from_mp3(mp3list[random.randint(0,len(mp3list)-1 )])
     return res
             
 
