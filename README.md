@@ -15,9 +15,7 @@ plan1:
 4. 使用方法：选择一个model进行classify，上传submitty后拿出错误的再经过第二个model，一直到使用过所有model
 
 
-plan2:
-
-* 训练单个字符的model *
+plan2: 训练单个字符的model*
 
 
 1. 针对单个字符进行model训练（利用plan1的tts资源）
