@@ -39,3 +39,4 @@ plan2: *训练单个字符的model*
   2.3. 合并识别结果并输出
 
 3. 上传model文件和classify脚本
+
