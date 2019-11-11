@@ -1,5 +1,10 @@
 #!/bin/bash
 
+virtualenv venv
+
+pip install -r requirement.txt
+
+source venv/bin/activate
 
 echo "train_audio"
 
@@ -51,6 +56,7 @@ done
 wait
 
 
+python pic_train.py --width 128 --height 64 --length 8 --symbols symbols.txt --batch-size 4 --epochs 6 --output-model audiomultts --train-dataset train_image --validate-dataset valid_image
 
 
 
