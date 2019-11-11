@@ -54,6 +54,8 @@ def testsplit():
                 return
 
 for idx,i in enumerate(os.listdir("convert")):
+    if i % 500 == 0:
+        print("load ",i)
     mp3list.append(AudioSegment.from_mp3("convert/"+i))
     #mp3list.append("convert/"+i)
     charlist.append(i[0])
@@ -61,5 +63,7 @@ for idx,i in enumerate(os.listdir("convert")):
 
 
 for i in range(0,5000):
+    if i % 500 == 0:
+        print("generrate ",i)
     song,cres = grandom()
     song.export("{0}/{1}.mp3".format(sys.argv[1],cres),format="mp3")
