@@ -2,17 +2,17 @@
 
 virtualenv venv
 
+
+. venv/bin/activate
 pip install -r requirement.txt
 
-source venv/bin/activate
-
-tar -zxvf audio.tar.gz
+tar -zxf audio.tar.gz
 
 echo "train_audio"
 
 mkdir train_audio
 
-for i in seq `1 16`;do
+for i in seq `seq 1 15`;do
     python concat.py train_audio &
 done
 
@@ -22,7 +22,7 @@ echo "valid_audio"
 
 mkdir valid_audio
 
-for i in seq `1 4`;do
+for i in seq `seq 1 3`;do
     python concat.py valid_audio &
 done
 
@@ -42,6 +42,7 @@ done
 
 wait
 
+rm -f tsp*
 
 echo "sox for valid image"
 
@@ -57,6 +58,7 @@ done
 
 wait
 
+rm -f validsp*
 
 python pic_train.py --width 128 --height 64 --length 8 --symbols symbols.txt --batch-size 4 --epochs 6 --output-model audiomultts --train-dataset train_image --validate-dataset valid_image
 
