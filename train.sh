@@ -6,6 +6,8 @@ pip install -r requirement.txt
 
 source venv/bin/activate
 
+tar -zxvf audio.tar.gz
+
 echo "train_audio"
 
 mkdir train_audio
