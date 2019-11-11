@@ -54,7 +54,6 @@ def testsplit():
                 return
 
 for idx,i in enumerate(os.listdir("convert")):
-    print(idx)
     mp3list.append(AudioSegment.from_mp3("convert/"+i))
     #mp3list.append("convert/"+i)
     charlist.append(i[0])
