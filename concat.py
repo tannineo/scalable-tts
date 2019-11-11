@@ -19,9 +19,11 @@ def grandom():
         pos = random.randint(0,len(mp3list)-1 )
         if res == None:
             res = mp3list[pos]
+            #res = AudioSegment.from_mp3(mp3list[pos])
             cres += charlist[pos]
         else:
             res += mp3list[pos]
+            #res += AudioSegment.from_mp3(mp3list[pos])
             cres += charlist[pos]
     return res, cres
 
@@ -54,12 +56,11 @@ def testsplit():
 for idx,i in enumerate(os.listdir("convert")):
     print(idx)
     mp3list.append(AudioSegment.from_mp3("convert/"+i))
+    #mp3list.append("convert/"+i)
     charlist.append(i[0])
-    if idx > 100:
-        break
 
 
 
-for i in range(0,20):
+for i in range(0,5000):
     song,cres = grandom()
-    song.export("concat_audio/{0}.mp3".format(cres),format="mp3")
+    song.export("{0}/{1}.mp3".format(sys.argv[1],cres),format="mp3")
